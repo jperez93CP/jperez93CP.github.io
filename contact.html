@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Center Court Chronicles - Home</title>
+    <link rel="stylesheet" href="styles_base.css" />
+    <link rel="stylesheet" href="styles_page_specific.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navlogo">
+          <img src="ccc_logo.png" alt="Center Court Chronicles" />
+        </div>
+        <ul class="navitems">
+          <li class="navitem"><a href="index.html">Home</a></li>
+          <li class="navitem"><a href="blog_posts.html">Articles</a></li>
+          <li class="navitem"><a href="about.html">About Us</a></li>
+          <li class="navitem"><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      h1, p, #dateTime, form {
+        margin-left: 20px;
+      }
+      
+      h1 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      #dateTime {
+        margin-bottom: 20px;
+      }
+
+      fieldset {
+        border: 2px solid #000;
+        margin-bottom: 10px;
+        padding: 20px;
+      }
+
+      /* Formatting input fields when they gain focus and are valid/invalid */
+      input:focus:valid {
+        background-color: #d4edda;
+      }
+
+      input:focus:invalid {
+        background-color: #f8d7da;
+      }
+
+      .buttons {
+        margin-bottom: 20px;
+      }
+    </style>
+    <script>
+      // Keeps track of the current date and time (Requirement: JavaScript function to track time)
+      function showDateTime() {
+        document.getElementById("dateTime").innerText =
+          new Date().toLocaleString();
+      }
+
+      // Sends an alert when the form is submitted (Requirement: JavaScript alert)
+      function sendAlert() {
+        alert("Thank you for contacting us! We will get back to you soon.");
+      }
+
+      // Countdown function (Requirement: Countdown function)
+      function countdown() {
+        let count = 5;
+        const interval = setInterval(() => {
+          document.getElementById("countdown").innerText = count;
+          if (count === 0) {
+            clearInterval(interval);
+            alert("Redirecting to Homepage...");
+          }
+          count--;
+        }, 1000);
+      }
+
+      // Converts text input to a number (Requirement: Number-to-text conversion)
+      function convertToNumber() {
+        let str = document.getElementById("textNum").value;
+        alert("Converted to number: " + Number(str));
+      }
+
+      // Uses a Math method to compute the square root (Requirement: Math method)
+      function squareRoot() {
+        let num = parseFloat(document.getElementById("mathNum").value);
+        alert("Square Root: " + Math.sqrt(num));
+      }
+
+      // Continuously updates the date and time (Requirement: Interval-based execution)
+      setInterval(showDateTime, 1000);
+    </script>
+  </head>
+  <body>
+    <h1>Contact Us</h1>
+    <p>Have a tennis-related inquiry? Reach out to us!</p>
+
+    <!-- Displaying current date and time -->
+    <div id="dateTime"></div>
+
+    <form onsubmit="sendAlert(); return false;">
+      <fieldset>
+        <legend>Your Information</legend>
+        <!-- Text Input with validation -->
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          required
+          pattern="[A-Za-z\s]{3,}"
+          placeholder="Enter your name"
+        />
+
+        <!-- Email input with mobile keyboard support -->
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          required
+          placeholder="Enter your email"
+        />
+
+        <!-- Date input -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" />
+      </fieldset>
+
+      <fieldset>
+        <legend>How Can We Help?</legend>
+        <!-- Radio buttons -->
+        <label>Inquiry Type:</label>
+        <input type="radio" name="inquiry" value="General" /> General Inquiry
+        <input type="radio" name="inquiry" value="Collaboration" />
+        Collaboration
+        <input type="radio" name="inquiry" value="Feedback" /> Feedback
+
+        <!-- Number input with spinner functionality -->
+        <label for="tennisExp">Your Tennis Experience (Years):</label>
+        <input type="number" id="tennisExp" min="0" max="50" />
+
+        <!-- Range slider -->
+        <label for="range">Rate Your Tennis Passion:</label>
+        <input type="range" id="range" min="0" max="100" />
+      </fieldset>
+
+      <fieldset>
+        <legend>More Details</legend>
+        <!-- Selection list -->
+        <label for="topics">Preferred Tennis Topics:</label>
+        <select id="topics">
+          <option value="tournaments">Tournaments</option>
+          <option value="gear">Tennis Gear</option>
+          <option value="training">Training Tips</option>
+        </select>
+
+        <!-- Text area -->
+        <label for="message">Your Message:</label>
+        <textarea id="message" rows="4" cols="30"></textarea>
+
+        <!-- Datalist -->
+        <label for="datalistInput">Favorite Tennis Player:</label>
+        <input list="players" id="datalistInput" />
+        <datalist id="players">
+          <option value="Roger Federer"></option>
+          <option value="Serena Williams"></option>
+          <option value="Rafael Nadal"></option>
+        </datalist>
+      </fieldset>
+
+      <fieldset>
+        <legend>Extra Features</legend>
+        <!-- Conversion between text and number -->
+        <label for="textNum">Convert Text to Number:</label>
+        <input type="text" id="textNum" />
+        <button type="button" onclick="convertToNumber()">Convert</button>
+
+        <!-- Math method (Square Root Calculation) -->
+        <label for="mathNum">Square Root Calculation:</label>
+        <input type="number" id="mathNum" />
+        <button type="button" onclick="squareRoot()">Calculate</button>
+
+        <!-- Countdown function -->
+        <div>Countdown Timer: <span id="countdown">5</span></div>
+        <button type="button" onclick="countdown()">Start Countdown</button>
+      </fieldset>
+
+      <!-- Submit and Reset Buttons -->
+      <div class="buttons">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+
+    <footer>
+      <p>&copy; Center Court Chronicles, inc.</p>
+    </footer>
+  </body>
+</html>
