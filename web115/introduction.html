@@ -8,13 +8,16 @@
       body {
         font-family: Arial, sans-serif;
         background-color: #4c98af;
-        color: white;
+        color: black;
         padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-weight: bold;
       }
 
       header {
         background-color: #4c98af;
-        color: white;
+        color: black;
         margin-bottom: 50px;
       }
 
@@ -54,11 +57,6 @@
         font-style: italic;
       }
 
-      img {
-        max-width: 25%;
-        height: auto;
-      }
-
       #intro-body {
         margin: 20px 20%;
       }
@@ -66,6 +64,18 @@
       #intro-quote {
         text-align: center;
         margin: 40px 0;
+      }
+
+      .white-circle {
+        position: fixed;
+        bottom: 2px;
+        left: 2px;
+        background-color: white;
+        color: white;
+        border-radius: 50%;
+        width: 105px;
+        height: 105px;
+        text-align: center;
       }
 
       footer {
@@ -90,13 +100,14 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="introduction.html">Introduction</a></li>
           <li><a href="contract.html">Contract</a></li>
+          <li><a href="brand.html">Brand</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <h2>Introduction</h2>
       <figure>
-        <img src="images/image(1).jpg" alt="Jordan Perez" />
+        <img src="images/image(2).jpg" alt="Jordan Perez" />
         <figcaption>At the French Open in 2024</figcaption>
       </figure>
       <div id="intro-body">
@@ -145,6 +156,10 @@
           <p>-King Solomon</p>
         </div>
       </div>
+      <!-- This white circle is for visibility of the accumulus validator icon -->
+      <div class="white-circle">
+        <p>This is the validator</p>
+      </div>
     </main>
     <footer>
       <a href="http://github.com/jperez93CP/" target="_blank">GitHub</a>
@@ -166,6 +181,7 @@
         target="_blank"
         >Linkedin</a
       >
+      <p>Innovative Software Solutions</p>
       <p>&copy; 2025 Jordan A. Perez</p>
     </footer>
   </body>
