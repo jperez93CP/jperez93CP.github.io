@@ -8,13 +8,16 @@
       body {
         font-family: Arial, sans-serif;
         background-color: #4c98af;
-        color: white;
+        color: black;
         padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-weight: bold;
       }
 
       header {
         background-color: #4c98af;
-        color: white;
+        color: black;
         margin-bottom: 50px;
       }
 
@@ -44,6 +47,19 @@
       .signature {
         font-style: italic;
       }
+
+      .white-circle {
+        position: fixed;
+        bottom: 2px;
+        left: 2px;
+        background-color: white;
+        color: white;
+        border-radius: 50%;
+        width: 105px;
+        height: 105px;
+        text-align: center;
+      }
+
       footer {
         margin: 20px auto;
         text-align: center;
@@ -66,6 +82,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="introduction.html">Introduction</a></li>
           <li><a href="contract.html">Contract</a></li>
+          <li><a href="brand.html">Brand</a></li>
         </ul>
       </nav>
     </header>
@@ -90,6 +107,10 @@
       <p>
         Signed: <span class="signature">Jordan A. Perez, 13 November 2025</span>
       </p>
+      <!-- This white circle is for visibility of the accumulus validator icon -->
+      <div class="white-circle">
+        <p>This is the validator</p>
+      </div>
     </main>
     <footer>
       <a href="http://github.com/jperez93CP/" target="_blank">GitHub</a>
@@ -111,6 +132,7 @@
         target="_blank"
         >Linkedin</a
       >
+      <p>Innovative Software Solutions</p>
       <p>&copy; 2025 Jordan A. Perez</p>
     </footer>
   </body>
