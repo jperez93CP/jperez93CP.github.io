@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #4c98af;
+    background-color: #78b5c7;
     font-weight: bold;
     color: black;
     padding: 20px;
@@ -9,13 +9,13 @@ body {
 }
 
 header {
-    background-color: #4c98af;
+    background-color: #78b5c7;
     color: black;
     margin-bottom: 50px;
 }
 
 a {
-    color: #ec850e;
+    color: #a05500;
     text-decoration: none;
 }
 
@@ -62,11 +62,11 @@ font-style: italic;
 }
 
 #bg-color-swatch {
-    background-color: #4c98af;
+    background-color: #78b5c7;
 }
 
 #link-color-swatch {
-    background-color: #ec850e;
+    background-color: #a05500;
 }
 
 #logo {
