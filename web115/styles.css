@@ -111,3 +111,19 @@ footer a {
     font-size: 1rem;
 }
 
+/* For fizzbuzz0.html */
+
+.fb-input {
+    display: block;
+    margin: 20px 0;
+
+}
+
+#fb-submit {
+    padding: 5px 10px;
+    border-radius: 8%;
+    background-color: #a05500;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
