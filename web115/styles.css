@@ -127,3 +127,8 @@ footer a {
     border: none;
     cursor: pointer;
 }
+
+#first_name, #middle_initial, #last_name {
+    border-radius: 2%;
+    border: white 2px solid;
+}
