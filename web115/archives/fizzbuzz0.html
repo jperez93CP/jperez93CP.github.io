@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="images/logo(1).jpg" type="image/jpg" />
+    <title>Jordan Perez's Jolly Penguin | WEB115 | FizzBuzz 0</title>
+    <script
+      src="https://lint.page/kit/67ff88.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/HTMLInclude.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div data-include="components/header.html"></div>
+    </header>
+    <main>
+      <h2>FizzBuzz 0</h2>
+
+      <h3 id="greeting">Welcome to Jordan's Portfolio!</h3>
+
+      <form id="nameForm">
+        <div class="fb-input">
+          <label for="first_name">First Name (Required):</label>
+          <input
+            required
+            type="text"
+            id="first_name"
+            placeholder="e.g., John"
+          />
+        </div>
+        <div class="fb-input">
+          <label for="middle_initial">Middle Initial:</label>
+          <input
+            type="text"
+            id="middle_initial"
+            maxlength="1"
+            placeholder="e.g., A"
+          />
+        </div>
+        <div class="fb-input">
+          <label for="last_name">Last Name:</label>
+          <input type="text" id="last_name" placeholder="e.g., Smith" />
+        </div>
+        <button type="submit" id="fb-submit">Submit</button>
+      </form>
+
+      <!-- FizzBuzz loop outputs in this div -->
+      <div id="output"></div>
+      <!-- This white circle is for visibility of the accumulus validator icon -->
+      <div class="white-circle">
+        <p>This is the validator</p>
+      </div>
+    </main>
+    <footer>
+      <div data-include="components/footer.html"></div>
+    </footer>
+    <script>
+      document
+        .getElementById("nameForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          let first = document.getElementById("first_name").value.trim();
+          let middle = document.getElementById("middle_initial").value.trim();
+          let last = document.getElementById("last_name").value.trim();
+
+          let fullName = first;
+          if (middle !== "") {
+            fullName += " " + middle + ".";
+          }
+          if (last !== "") {
+            fullName += " " + last;
+          }
+
+          let greeting = document.getElementById("greeting");
+          greeting.textContent = `Welcome to Jordan's Portfolio, ${fullName}!`;
+
+          let count = prompt(`How high do you want to count, ${first}?`);
+          count = parseInt(count);
+
+          if (isNaN(count) || count <= 0) {
+            alert("Invalid number — please reload and enter a valid value.");
+            return;
+          }
+
+          let outputDiv = document.getElementById("output");
+          outputDiv.innerHTML = "";
+
+          let list = document.createElement("ol");
+
+          let themeWords = "Jolly Molly";
+
+          for (let i = 1; i <= count; i++) {
+            let li = document.createElement("li");
+
+            let evenOdd =
+              i % 2 === 0 ? "the number is even" : "the number is odd";
+
+            li.textContent = `${themeWords} - ${evenOdd}`;
+            list.appendChild(li);
+          }
+
+          outputDiv.appendChild(list);
+        });
+    </script>
+  </body>
+</html>
