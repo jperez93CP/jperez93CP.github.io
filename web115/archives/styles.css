@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #78b5c7;
+    font-weight: bold;
+    color: black;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #78b5c7;
+    color: black;
+    margin-bottom: 50px;
+}
+
+a {
+    color: #a05500;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+h3 {
+    margin-top: 40px;
+}
+
+.signature {
+font-style: italic;
+}
+
+.brand-colors {
+    display: flex;
+    background-color: white;
+    height: auto;
+    max-width: 250px;
+    padding: 10px;
+    justify-content: space-around;
+    gap: auto;
+}
+
+.color-swatch {
+    margin: auto;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bg-color-swatch {
+    background-color: #78b5c7;
+}
+
+#link-color-swatch {
+    background-color: #a05500;
+}
+
+#logo {
+    height: 200px;
+    width: auto;
+}
+
+.white-circle {
+        position: fixed;
+        bottom: 2px;
+        left: 2px;
+        background-color: white;
+        color: white;
+        border-radius: 50%;
+        width: 105px;
+        height: 105px;
+        text-align: center;
+      }
+
+footer {
+    margin: 20px auto;
+    text-align: center;
+}
+
+footer a {
+    margin: 0 20px;
+}
+
+/* For jspractice.html */
+
+.console-box {
+    display: block;
+    width: 60%;
+    min-width: 500px;
+    height: 500px;
+    background: #111;
+    color: #d4d4d4; 
+    margin: 30px auto;
+    resize: none;
+    border: none;
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+/* For fizzbuzz0.html */
+
+.fb-input {
+    display: block;
+    margin: 20px 0;
+
+}
+
+#fb-submit {
+    padding: 5px 10px;
+    border-radius: 8%;
+    background-color: #a05500;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#first_name, #middle_initial, #last_name {
+    border-radius: 2%;
+    border: white 2px solid;
+}
