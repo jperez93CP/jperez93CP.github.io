@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="images/logo(1).jpg" type="image/jpg" />
+    <title>Jordan Perez's Jolly Penguin | WEB115 | Fizz Buzz 1</title>
+    <script
+      src="https://lint.page/kit/67ff88.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/HTMLInclude.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div data-include="components/header.html"></div>
+    </header>
+    <main>
+      <h2>Fizz Buzz 1</h2>
+
+      <h3 id="greeting">Welcome to Jordan's Portfolio!</h3>
+
+      <form id="nameForm">
+        <div class="fb-input">
+          <label for="first_name">First Name (Required):</label>
+          <input
+            required
+            type="text"
+            id="first_name"
+            placeholder="e.g., John"
+          />
+        </div>
+        <div class="fb-input">
+          <label for="middle_initial">Middle Initial:</label>
+          <input
+            type="text"
+            id="middle_initial"
+            maxlength="1"
+            placeholder="e.g., A"
+          />
+        </div>
+        <div class="fb-input">
+          <label for="last_name">Last Name:</label>
+          <input type="text" id="last_name" placeholder="e.g., Smith" />
+        </div>
+        <button type="submit" id="fb-submit">Submit</button>
+      </form>
+
+      <!-- FizzBuzz loop outputs in this div -->
+      <div id="output"></div>
+      <!-- This white circle is for visibility of the accumulus validator icon -->
+      <div class="white-circle">
+        <p>This is the validator</p>
+      </div>
+    </main>
+    <footer>
+      <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="scripts/fb1.js" defer></script>
+  </body>
+</html>
