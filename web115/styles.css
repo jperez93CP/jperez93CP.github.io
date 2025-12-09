@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #78b5c7;
+    background-color: #D4DEE8;
     font-weight: bold;
     color: black;
     padding: 20px;
@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #78b5c7;
+    background-color: #D4DEE8;
     color: black;
     margin-bottom: 50px;
 }
@@ -27,7 +27,7 @@ header {
 }
 
 a {
-    color: #a05500;
+    color: #005EC2;
     text-decoration: none;
 }
 
@@ -50,7 +50,7 @@ h3 {
 }
 
 .signature {
-font-style: italic;
+    font-style: italic;
 }
 
 .brand-colors {
@@ -74,11 +74,11 @@ font-style: italic;
 }
 
 #bg-color-swatch {
-    background-color: #78b5c7;
+    background-color: #D4DEE8;
 }
 
 #link-color-swatch {
-    background-color: #a05500;
+    background-color: #005EC2;
 }
 
 #logo {
@@ -87,16 +87,16 @@ font-style: italic;
 }
 
 .white-circle {
-        position: fixed;
-        bottom: 2px;
-        left: 2px;
-        background-color: white;
-        color: white;
-        border-radius: 50%;
-        width: 105px;
-        height: 105px;
-        text-align: center;
-      }
+    position: fixed;
+    bottom: 2px;
+    left: 2px;
+    background-color: white;
+    color: white;
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
+    text-align: center;
+}
 
 footer {
     margin: 20px auto;
@@ -115,7 +115,7 @@ footer a {
     min-width: 500px;
     height: 500px;
     background: #111;
-    color: #d4d4d4; 
+    color: #d4d4d4;
     margin: 30px auto;
     resize: none;
     border: none;
@@ -136,20 +136,23 @@ footer a {
     padding: 5px 10px;
     margin: 20px 0;
     border-radius: 8%;
-    background-color: #a05500;
+    background-color: #005EC2;
     color: white;
     border: none;
     cursor: pointer;
 }
 
-#first_name, #middle_initial, #last_name {
+#first_name,
+#middle_initial,
+#last_name {
     border-radius: 2%;
     border: 2px solid white;
 }
 
 /* For fizzbuzz4.html */
 
-.divisor-input, .divisor-word-input {
+.divisor-input,
+.divisor-word-input {
     display: inline-block;
     margin-right: 20px;
 }
