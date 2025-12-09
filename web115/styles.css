@@ -120,7 +120,9 @@ footer a {
 }
 
 #fb-submit {
+    display: block;
     padding: 5px 10px;
+    margin: 20px 0;
     border-radius: 8%;
     background-color: #a05500;
     color: white;
@@ -130,5 +132,18 @@ footer a {
 
 #first_name, #middle_initial, #last_name {
     border-radius: 2%;
-    border: white 2px solid;
+    border: 2px solid white;
+}
+
+/* For fizzbuzz4.html */
+
+.divisor-input, .divisor-word-input {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.instructions {
+    font-style: italic;
+    margin-top: -10px;
+    margin-bottom: 40px;
 }
