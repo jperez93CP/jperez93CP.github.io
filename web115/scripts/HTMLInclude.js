@@ -64,7 +64,11 @@
     w.HTMLInclude();
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 }(window, document)
+=======
+}(window, document)
+>>>>>>> Stashed changes
 =======
 }(window, document)
 >>>>>>> Stashed changes
