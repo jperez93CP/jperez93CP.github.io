@@ -38,7 +38,7 @@ document.getElementById("nameForm").addEventListener("submit", function (event) 
         { divisor: 7, word: "BANG! " }
     ];
 
-    function checkDivision(number, divisor) {
+    function divCheck(number, divisor) {
         return number % divisor === 0;
     }
 
@@ -54,7 +54,7 @@ document.getElementById("nameForm").addEventListener("submit", function (event) 
         }
 
         rules.forEach((rule) => {
-            if (checkDivision(i, rule.divisor)) {
+            if (divCheck(i, rule.divisor)) {
                 outputText += rule.word;
             }
         });
