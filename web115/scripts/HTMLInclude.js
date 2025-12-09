@@ -62,4 +62,8 @@
         }
     }
     w.HTMLInclude();
+<<<<<<< Updated upstream
 }(window, document)
+=======
+}(window, document)
+>>>>>>> Stashed changes
