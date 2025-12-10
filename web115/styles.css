@@ -107,6 +107,10 @@ footer a {
     margin: 0 20px;
 }
 
+#portfolio-link {
+    margin: 0 -20px;
+}
+
 /* For jspractice.html */
 
 .console-box {
