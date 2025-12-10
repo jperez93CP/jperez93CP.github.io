@@ -163,3 +163,34 @@ footer a {
     margin-top: -10px;
     margin-bottom: 40px;
 }
+
+/* For fccfsjs_outline.html */
+
+.agreement {
+    margin-top: 30px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.agreement:first-of-type,
+.agreement:last-of-type {
+    margin-bottom: 50px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 3px solid black;
+}
+
+th, td {
+    padding: 5px;
+}
+
+td:nth-child(2) {
+    text-align: center;
+}
