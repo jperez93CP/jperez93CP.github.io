@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jordan Perez's Jolly Penguin | WEB115 | Introduction Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      h3 {
+        margin-top: 40px;
+      }
+
+      #name,
+      #aboutMe,
+      #personalBackground,
+      #professionalBackground,
+      #primaryComputer {
+        max-width: 1200px;
+      }
+
+      label {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 6px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        max-width: 1200px;
+        padding: 8px;
+        font-size: 1rem;
+        font-weight: normal;
+      }
+
+      textarea {
+        height: 80px;
+        resize: none;
+      }
+
+      button {
+        margin-top: 15px;
+        padding: 10px 15px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      #courses-container {
+        margin-top: 20px;
+      }
+
+      .course-row {
+        max-width: 1200px;
+        border: 2px solid #005ec2;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+      }
+
+      .course-row input {
+        width: 100%;
+      }
+
+      #intro-preview {
+        background: white;
+        margin-top: 50px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      }
+
+      #intro-preview img {
+        width: 260px;
+        display: block;
+        margin: 0 auto;
+        border-radius: 6px;
+      }
+
+      figcaption {
+        text-align: center;
+        font-style: italic;
+        margin-top: 8px;
+      }
+
+      #intro-quote {
+        text-align: center;
+        margin-top: 30px;
+        font-style: italic;
+      }
+
+      a {
+        color: #005ec2;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <script
+      src="https://lint.page/kit/67ff88.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/HTMLInclude.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <div data-include="components/header.html"></div>
+    </header>
+    <main>
+      <h2>Introduction Form</h2>
+      <form id="intro-form">
+        <label for="uploadedImage">Upload Your Photo</label>
+        <input id="uploadedImage" type="file" accept="image/*" />
+
+        <label for="img-caption">Image Caption</label>
+        <input id="img-caption" type="text" value="My Image" />
+
+        <label for="name">Name</label>
+        <input id="name" type="text" required value="Jordan Perez" />
+
+        <label for="aboutMe">About Me Paragraph</label>
+        <textarea id="aboutMe" required>
+    I'm Jordan, and I'm excited to be working with all of you this semester! I'm pursuing an associate's degree in full stack programming with the goal of becoming a software developer. I volunteer full time conducting bible courses. Among my interests and hobbies are sports (mainly tennis), running, chess and movies.</textarea
+        >
+
+        <label for="personalBackground">Personal Background</label>
+        <textarea id="personalBackground" required>
+    I'm of hispanic descent. Born and raised in Charlotte. I am 18 years old.</textarea
+        >
+
+        <label for="professionalBackground">Professional Background</label>
+        <textarea id="professionalBackground" required>
+    I'm starting a job at an accounting firm. I have never worked professionally in the IT field.</textarea
+        >
+
+        <label for="primaryComputer">Primary Computer</label>
+        <input
+          id="primaryComputer"
+          type="text"
+          required
+          value="Dell, Windows 11, Laptop, from home."
+        />
+
+        <h3>Courses I'm Taking & Why</h3>
+        <div id="courses-container"></div>
+
+        <button type="button" id="addCourse">Add Course</button>
+        <button type="button" id="removeCourse">Remove Last Course</button>
+
+        <h3>Quote Section</h3>
+        <label for="quoteText">Quote</label>
+        <textarea id="quoteText" required>
+    “The lazy person has his cravings, yet he has nothing, But the diligent one will be fully satisfied.”</textarea
+        >
+
+        <label for="quoteAuthor">Quote Author</label>
+        <input id="quoteAuthor" type="text" required value="King Solomon" />
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <section id="intro-preview">
+        <h3>Your Introduction Will Appear Here</h3>
+        <p>Submit the form to see the formatted version.</p>
+      </section>
+    </main>
+
+    <script>
+      // INITIAL COURSE DATA (Prefilled)
+      const initialCourses = [
+        {
+          code: "WEB140",
+          why: "I'm taking this course to supplement my web development knowledge.",
+        },
+        {
+          code: "WEB115",
+          why: "This course will also help me expand my web app development.",
+        },
+        {
+          code: "CTS240",
+          why: "I don't plan to work as a project manager, but this course will help me understand workplace development processes.",
+        },
+      ];
+
+      let courseList = [...initialCourses];
+
+      const coursesContainer = document.getElementById("courses-container");
+
+      function renderCourses() {
+        coursesContainer.innerHTML = "";
+        courseList.forEach((course, index) => {
+          const div = document.createElement("div");
+          div.className = "course-row";
+
+          div.innerHTML = `
+          <label>Course Code</label>
+          <input type="text" class="course-code" required value="${course.code}">
+
+          <label>Explanation</label>
+          <textarea class="course-why" required>${course.why}</textarea>
+        `;
+
+          coursesContainer.appendChild(div);
+        });
+      }
+
+      renderCourses();
+
+      document.getElementById("addCourse").onclick = () => {
+        courseList.push({ code: "", why: "" });
+        renderCourses();
+      };
+
+      document.getElementById("removeCourse").onclick = () => {
+        if (courseList.length > 0) {
+          courseList.pop();
+          renderCourses();
+        }
+      };
+
+      document
+        .getElementById("intro-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const codes = [...document.querySelectorAll(".course-code")].map(
+            (el) => el.value
+          );
+          const whys = [...document.querySelectorAll(".course-why")].map(
+            (el) => el.value
+          );
+
+          let courseHTML = "<ul>";
+          codes.forEach((code, i) => {
+            courseHTML += `
+          <li>${code}:
+            <ul><li>${whys[i]}</li></ul>
+          </li>
+        `;
+          });
+          courseHTML += "</ul>";
+
+          const imgFile = document.getElementById("uploadedImage").files[0];
+          let imgHTML = "";
+
+          const imgCaption = document.getElementById("img-caption").value;
+
+          if (imgFile) {
+            const imgURL = URL.createObjectURL(imgFile);
+            imgHTML = `
+          <figure>
+            <img src="${imgURL}" alt="Uploaded Image">
+            <figcaption>${imgCaption}</figcaption>
+          </figure>
+        `;
+          }
+
+          document.getElementById("intro-preview").innerHTML = `
+        ${imgHTML}
+        <p>${document.getElementById("aboutMe").value}</p>
+
+        <ul>
+          <li>Personal Background: ${
+            document.getElementById("personalBackground").value
+          }</li>
+          <li>Professional Background: ${
+            document.getElementById("professionalBackground").value
+          }</li>
+          <li>Primary Computer: ${
+            document.getElementById("primaryComputer").value
+          }</li>
+          <li>Courses I'm Taking & Why:
+            ${courseHTML}
+          </li>
+        </ul>
+
+        <div id="intro-quote">
+          <p>${document.getElementById("quoteText").value}</p>
+          <p>- ${document.getElementById("quoteAuthor").value}</p>
+        </div>
+      `;
+        });
+    </script>
+  </body>
+</html>
