@@ -31,6 +31,7 @@
         padding: 8px;
         font-size: 1rem;
         font-weight: normal;
+        border: 2px solid #ffffff;
       }
 
       textarea {
@@ -62,11 +63,8 @@
       }
 
       #intro-preview {
-        background: white;
         margin-top: 50px;
         padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
       }
 
       #intro-preview img {
@@ -160,27 +158,16 @@
       </form>
 
       <section id="intro-preview">
-        <h3>Your Introduction Will Appear Here</h3>
-        <p>Submit the form to see the formatted version.</p>
+        <h3>Output</h3>
+        <p>Submit the form to see your introduction.</p>
       </section>
     </main>
 
     <script>
-      // INITIAL COURSE DATA (Prefilled)
       const initialCourses = [
-        {
-          code: "WEB140",
-          why: "I'm taking this course to supplement my web development knowledge.",
-        },
-        {
-          code: "WEB115",
-          why: "This course will also help me expand my web app development.",
-        },
-        {
-          code: "CTS240",
-          why: "I don't plan to work as a project manager, but this course will help me understand workplace development processes.",
-        },
-      ];
+        {code: "WEB140", why: "I'm taking this course to supplement my web development knowledge."},
+        {code: "WEB115", why: "This course will also help me expand my web app development."},
+        {code: "CTS240", why: "I don't plan to work as a project manager, but this course will help me understand workplace development processes."}];
 
       let courseList = [...initialCourses];
 
