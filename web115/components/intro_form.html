@@ -1,0 +1,56 @@
+<h2>Introduction Form</h2>
+<form id="intro-form">
+  <label for="uploadedImage">Upload Your Photo</label>
+  <input id="uploadedImage" type="file" accept="image/*" />
+
+  <label for="img-caption">Image Caption</label>
+  <input id="img-caption" type="text" value="My Image" />
+
+  <label for="name">Name</label>
+  <input id="name" type="text" required value="Jordan Perez" />
+
+  <label for="aboutMe">About Me Paragraph</label>
+  <textarea id="aboutMe" required>
+    I'm Jordan, and I'm excited to be working with all of you this semester! I'm pursuing an associate's degree in full stack programming with the goal of becoming a software developer. I volunteer full time conducting bible courses. Among my interests and hobbies are sports (mainly tennis), running, chess and movies.</textarea
+  >
+
+  <label for="personalBackground">Personal Background</label>
+  <textarea id="personalBackground" required>
+    I'm of hispanic descent. Born and raised in Charlotte. I am 18 years old.</textarea
+  >
+
+  <label for="professionalBackground">Professional Background</label>
+  <textarea id="professionalBackground" required>
+    I'm starting a job at an accounting firm. I have never worked professionally in the IT field.</textarea
+  >
+
+  <label for="primaryComputer">Primary Computer</label>
+  <input
+    id="primaryComputer"
+    type="text"
+    required
+    value="Dell, Windows 11, Laptop, from home."
+  />
+
+  <h3>Courses I'm Taking & Why</h3>
+  <div id="courses-container"></div>
+
+  <button type="button" id="addCourse">Add Course</button>
+  <button type="button" id="removeCourse">Remove Last Course</button>
+
+  <h3>Quote Section</h3>
+  <label for="quoteText">Quote</label>
+  <textarea id="quoteText" required>
+    “The lazy person has his cravings, yet he has nothing, But the diligent one will be fully satisfied.”</textarea
+  >
+
+  <label for="quoteAuthor">Quote Author</label>
+  <input id="quoteAuthor" type="text" required value="King Solomon" />
+
+  <button type="submit">Submit</button>
+</form>
+
+<section id="intro-preview">
+  <h3>Output</h3>
+  <p>Submit the form to see your introduction.</p>
+</section>

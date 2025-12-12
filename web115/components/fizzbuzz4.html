@@ -1,0 +1,101 @@
+<h2>Fizz Buzz 4</h2>
+
+<h3 id="greeting">Welcome to Jordan's Portfolio!</h3>
+
+<p class="instructions">
+  Enter your name, divisors, and words in the form below to see the customized
+  Fizz Buzz output.
+</p>
+
+<form id="nameForm">
+  <div class="username">
+    <div class="fb-input">
+      <label for="first_name">First Name (Required):</label>
+      <input required type="text" id="first_name" placeholder="e.g., John" />
+    </div>
+    <div class="fb-input">
+      <label for="middle_initial">Middle Initial:</label>
+      <input
+        type="text"
+        id="middle_initial"
+        maxlength="1"
+        placeholder="e.g., A"
+      />
+    </div>
+    <div class="fb-input">
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" placeholder="e.g., Smith" />
+    </div>
+  </div>
+  <div class="divisor-input">
+    <div class="fb-input">
+      <label for="divisor1">Divisor 1 (Required):</label>
+      <input required type="number" id="divisor1" placeholder="e.g., 3" />
+    </div>
+    <div class="fb-input">
+      <label for="divisor2">Divisor 2 (Required):</label>
+      <input required type="number" id="divisor2" placeholder="e.g., 5" />
+    </div>
+    <div class="fb-input">
+      <label for="divisor3">Divisor 3 (Required):</label>
+      <input required type="number" id="divisor3" placeholder="e.g., 7" />
+    </div>
+    <div class="fb-input">
+      <label for="line-count">Line Count (Required):</label>
+      <input
+        required
+        type="number"
+        id="line-count"
+        placeholder="e.g., 100"
+        value="125"
+      />
+    </div>
+  </div>
+  <div class="divisor-word-input">
+    <div class="fb-input">
+      <label for="word1">Word for Divisor 1 (Required):</label>
+      <input
+        required
+        type="text"
+        id="word1"
+        placeholder="e.g., Fizz"
+        value="OOOH"
+      />
+    </div>
+    <div class="fb-input">
+      <label for="word2">Word for Divisor 2 (Required):</label>
+      <input
+        required
+        type="text"
+        id="word2"
+        placeholder="e.g., Buzz"
+        value="AAAH"
+      />
+    </div>
+    <div class="fb-input">
+      <label for="word3">Word for Divisor 3 (Required):</label>
+      <input
+        required
+        type="text"
+        id="word3"
+        placeholder="e.g., Bang"
+        value="BANG!"
+      />
+    </div>
+    <div class="fb-input">
+      <label for="default_word">Default Word (Required):</label>
+      <input
+        required
+        type="text"
+        id="default_word"
+        placeholder="e.g., Bang"
+        value="Jolly"
+      />
+    </div>
+  </div>
+  <button type="submit" id="fb-submit">Submit</button>
+</form>
+<!-- FizzBuzz loop outputs in this div -->
+<div id="output"></div>
+<!-- This white circle is for visibility of the accumulus validator icon -->
+<div class="white-circle"></div>

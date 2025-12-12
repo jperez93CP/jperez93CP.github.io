@@ -26,7 +26,6 @@
 
       input,
       textarea {
-        width: 100%;
         max-width: 1200px;
         padding: 8px;
         font-size: 1rem;
@@ -35,8 +34,13 @@
       }
 
       textarea {
+        width: 100%;
         height: 80px;
         resize: none;
+      }
+
+      input {
+        width: 100%;
       }
 
       button {
@@ -167,7 +171,8 @@
       const initialCourses = [
         {code: "WEB140", why: "I'm taking this course to supplement my web development knowledge."},
         {code: "WEB115", why: "This course will also help me expand my web app development."},
-        {code: "CTS240", why: "I don't plan to work as a project manager, but this course will help me understand workplace development processes."}];
+        {code: "CTS240", why: "I don't plan to work as a project manager, but this course will help me understand workplace development processes."}
+      ];
 
       let courseList = [...initialCourses];
 

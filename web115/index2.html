@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jordan Perez ~ Home</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Jordan Perez's Jolly Penguin | WEB115 | Home</title>
+    <script
+      src="https://lint.page/kit/67ff88.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/HTMLInclude.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <div data-include="components/header2.html"></div>
+    </header>
+
+    <main>
+      <div id="content"></div>
+    </main>
+
+    <footer>
+      <div data-include="components/footer.html"></div>
+    </footer>
+    <script>
+      // Loads partial HTML into a target element
+      function loadContent(page) {
+        fetch(`components/${page}`)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("content").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading page:", error));
+      }
+
+      // Wait for header/footer to finish loading
+      document.addEventListener("DOMContentLoaded", () => {
+        // Watch for clicks on navigation links
+        document.body.addEventListener("click", function (e) {
+          if (e.target.matches("[data-page]")) {
+            e.preventDefault();
+            const page = e.target.getAttribute("data-page");
+            loadContent(page);
+
+            // OPTIONAL: Update browser URL without refreshing
+            history.pushState({ page }, "", page.replace(".html", ""));
+          }
+        });
+
+        // Load default page on first visit
+        loadContent("index.html");
+      });
+    </script>
+  </body>
+</html>
