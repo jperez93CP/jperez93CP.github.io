@@ -3,55 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jordan Perez ~ Home</title>
-    <link rel="stylesheet" href="styles.css" />
     <title>Jordan Perez's Jolly Penguin | WEB115 | Home</title>
     <script
       src="https://lint.page/kit/67ff88.js"
       crossorigin="anonymous"
     ></script>
     <script src="scripts/HTMLInclude.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
     <header>
-      <div data-include="components/header2.html"></div>
+      <div class="header-div">
+        <img id="header-logo" src="images/logo(1).png" alt="Brand Logo" />
+        <h1 id="header-title">Jordan Perez's Jolly Penguin | WEB115</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/web115/index.html">Home</a></li>
+          <li><a href="#home2" class="button-link">Home 2</a></li>
+          <li><a href="#introduction" class="button-link">Introduction</a></li>
+          <li><a href="#contract" class="button-link">Contract</a></li>
+          <li><a href="#brand" class="button-link">Brand</a></li>
+          <li><a href="#jspractice" class="button-link">JS Code Play</a></li>
+          <li><a href="#fizzbuzz0" class="button-link">Fizz Buzz 0</a></li>
+          <li><a href="#fizzbuzz1" class="button-link">Fizz Buzz 1</a></li>
+          <li><a href="#fizzbuzz2" class="button-link">Fizz Buzz 2</a></li>
+          <li><a href="#fizzbuzz3" class="button-link">Fizz Buzz 3</a></li>
+          <li><a href="#fizzbuzz4" class="button-link">Fizz Buzz 4</a></li>
+          <li>
+            <a href="#fccjs" class="button-link">FCC JS Outline</a>
+          </li>
+          <li>
+            <a href="#introform" class="button-link">Introduction Form</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-      <div id="content"></div>
+      <div
+        id="home2"
+        class="page-div"
+        data-include="components/index.html"
+      ></div>
+      <div
+        id="introduction"
+        class="page-div"
+        data-include="components/introduction.html"
+      ></div>
+      <div
+        id="contract"
+        class="page-div"
+        data-include="components/contract.html"
+      ></div>
+      <div
+        id="brand"
+        class="page-div"
+        data-include="components/brand.html"
+      ></div>
+      <div
+        id="jspractice"
+        class="page-div"
+        data-include="components/jspractice.html"
+      ></div>
+      <div
+        id="fizzbuzz0"
+        class="page-div"
+        data-include="components/fizzbuzz0.html"
+      ></div>
+      <div
+        id="fizzbuzz1"
+        class="page-div"
+        data-include="components/fizzbuzz1.html"
+      ></div>
+      <div
+        id="fizzbuzz2"
+        class="page-div"
+        data-include="components/fizzbuzz2.html"
+      ></div>
+      <div
+        id="fizzbuzz3"
+        class="page-div"
+        data-include="components/fizzbuzz3.html"
+      ></div>
+      <div
+        id="fizzbuzz4"
+        class="page-div"
+        data-include="components/fizzbuzz4.html"
+      ></div>
+      <div
+        id="fccjs"
+        class="page-div"
+        data-include="components/fccfsjs_outline.html"
+      ></div>
+      <div
+        id="introform"
+        class="page-div"
+        data-include="components/intro_form.html"
+      ></div>
     </main>
 
     <footer>
       <div data-include="components/footer.html"></div>
     </footer>
     <script>
-      // Loads partial HTML into a target element
-      function loadContent(page) {
-        fetch(`components/${page}`)
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("content").innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading page:", error));
-      }
+      document.addEventListener("DOMContentLoaded", function () {
+        function hideAllPages() {
+          document.querySelectorAll(".page-div").forEach((div) => {
+            div.style.display = "none";
+          });
+        }
 
-      // Wait for header/footer to finish loading
-      document.addEventListener("DOMContentLoaded", () => {
-        // Watch for clicks on navigation links
-        document.body.addEventListener("click", function (e) {
-          if (e.target.matches("[data-page]")) {
-            e.preventDefault();
-            const page = e.target.getAttribute("data-page");
-            loadContent(page);
+        function showPageFromHash() {
+          const hash = window.location.hash.replace("#", "");
+          hideAllPages();
 
-            // OPTIONAL: Update browser URL without refreshing
-            history.pushState({ page }, "", page.replace(".html", ""));
+          if (hash && document.getElementById(hash)) {
+            document.getElementById(hash).style.display = "block";
+          } else {
+            document.getElementById("home2").style.display = "block";
           }
-        });
+        }
 
-        // Load default page on first visit
-        loadContent("index.html");
+        showPageFromHash();
+
+        window.addEventListener("hashchange", showPageFromHash);
       });
     </script>
   </body>
